@@ -18,18 +18,4 @@ bootstrap();
 
 
 
-// example.ts
-import { poolPromise } from './db';
-
-const fetchData = async () => {
-  try {
-    const pool = await poolPromise;
-    const result = await pool.request()
-      .query('SELECT * FROM products');
-
-    console.log(result.recordset);
-  } catch (err) {
-    console.error('Error executing query:', err);
-  }
-};
 
