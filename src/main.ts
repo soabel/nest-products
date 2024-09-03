@@ -12,7 +12,7 @@ async function bootstrap() {
 
   // Configura el logger global de NestJS para usar PinoLoggerService
   app.useLogger(app.get(WinstonLoggerService));
-  await app.listen(3000);
+  await app.listen(process.env.PORT||3000);
 }
 bootstrap();
 
